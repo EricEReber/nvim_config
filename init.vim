@@ -217,8 +217,12 @@ autocmd FileType cpp imap <buffer> <C-b> <esc> :w<CR>:!g++ % -o %< && ./%<<CR>
 autocmd FileType java map <buffer> <C-b> :w<CR>:exec '!javac *.java && java %<'<CR>
 autocmd FileType java imap <buffer> <C-b> <esc> :w<CR>:!javac *.java && java %<<CR>
 
-
+" -------- VHDL ---------
+autocmd FileType vhdl set expandtab
+autocmd FileType vhdl set shiftwidth=2
 " -------- notebook ---------
 nnoremap <C-Enter> :w<CR>:exec '!python -m jupyter_ascending.requests.sync --filename %'<CR>
 nnoremap <C-j> :w<CR>:exec '!python -m jupyter_ascending.requests.sync --filename %'<CR>
 
+set undodir=$XDG_CONFIG_HOME/nvim/undo_dir
+set undofile
